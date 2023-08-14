@@ -1,0 +1,12 @@
+﻿.data-row:hover {
+    background-color: #9c9898 !important;
+    color: white !important;
+}
+
+.warning-stock {
+    background-color: #FAEBD7 !important;
+}
+
+.clickable-icon:hover {
+    color: #36b9cc !important;
+}
