@@ -60,6 +60,9 @@ namespace Proyecto2_MVC_AaronVillalobosArguedas.Controllers
         {
             if (ModelState.IsValid)
             {
+                producto.NombreProducto = producto.NombreProducto.ToLower();
+                producto.NombreProducto = char.ToUpper(producto.NombreProducto[0]) + producto.NombreProducto.Substring(1);
+
                 _context.Add(producto);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
