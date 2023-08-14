@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Proyecto2_MVC_AaronVillalobosArguedas.Models
@@ -21,15 +22,17 @@ namespace Proyecto2_MVC_AaronVillalobosArguedas.Models
 		/// Referencia al producto con solicitud de retiro.
 		/// </summary>
 		public Producto Producto { get; set; }
-		
+
 		/// <summary>
 		/// Fecha en la que se realiza el retiro.
 		/// </summary>
+		[DisplayName("Fecha de Entrega")]
 		public DateTime FechaEntrega { get; set; }
 
 		/// <summary>
 		/// Cantidad de producto a retirar por unidad de medida.
 		/// </summary>
+		[DisplayName("Cantidad")]
 		public int CantidadARetirar { get; set; }
 
 		/// <summary>

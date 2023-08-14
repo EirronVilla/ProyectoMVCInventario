@@ -1,0 +1,82 @@
+﻿@model Proyecto2_MVC_AaronVillalobosArguedas.Models.Producto
+
+<h4>Producto</h4>
+<hr />
+<div class="p-1">
+	<form asp-action="Create">
+		<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+		<div class="row">
+			<div class="col">
+				<div class="form-group">
+					<label asp-for="CodigoProducto" class="control-label"></label>
+					<input asp-for="CodigoProducto" class="form-control" />
+					<span asp-validation-for="CodigoProducto" class="text-danger"></span>
+				</div>
+			</div>
+
+			<div class="col">
+				<div class="form-group">
+					<label asp-for="NombreProducto" class="control-label"></label>
+					<input asp-for="NombreProducto" class="form-control" />
+					<span asp-validation-for="NombreProducto" class="text-danger"></span>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<div class="form-group">
+					<label asp-for="UnidadDeMedida" class="control-label"></label>
+					<input asp-for="UnidadDeMedida" class="form-control" />
+					<span asp-validation-for="UnidadDeMedida" class="text-danger"></span>
+				</div>
+			</div>
+
+			<div class="col">
+				<div class="form-group">
+					<label asp-for="CantidadMinima" class="control-label"></label>
+					<input asp-for="CantidadMinima" class="form-control" />
+					<span asp-validation-for="CantidadMinima" class="text-danger"></span>
+				</div>
+			</div>
+
+			<div class="col">
+				<div class="form-group">
+					<label asp-for="CantidadMaxima" class="control-label"></label>
+					<input asp-for="CantidadMaxima" class="form-control" />
+					<span asp-validation-for="CantidadMaxima" class="text-danger"></span>
+				</div>
+			</div>
+
+			<div class="col">
+				<div class="form-group">
+					<label asp-for="CantidadActual" class="control-label"></label>
+					<input asp-for="CantidadActual" class="form-control" />
+					<span asp-validation-for="CantidadActual" class="text-danger"></span>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-1">
+				<div class="form-group">
+					<input type="submit" value="Crear Nuevo" class="btn btn-primary" />
+				</div>
+			</div>
+			<div class="col-sm-1">
+				<div>
+					<a asp-action="Index">Volver a la lista</a>
+				</div>
+			</div>
+		</div>
+
+	</form>
+</div>
+
+
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

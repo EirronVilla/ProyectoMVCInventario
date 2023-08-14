@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Proyecto2_MVC_AaronVillalobosArguedas.Models
@@ -10,26 +11,31 @@ namespace Proyecto2_MVC_AaronVillalobosArguedas.Models
 		/// </summary>
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+		[DisplayName("Código")]
 		public int Id { get; set; }
 
 		/// <summary>
 		/// Llave foranea al producto pedido.
 		/// </summary>
+		[DisplayName("ID del Producto")]
 		public string ProductoId { get; set; }
 
 		/// <summary>
 		/// Producto solicitado.
-		/// </summary>
+		/// </summary> 
+
 		public Producto Producto { get; set; }
 
 		/// <summary>
 		/// Cantidad de Producto solicitado en el pedido por unidad de medida
-		/// </summary>
+		/// </summary> 
+		[DisplayName("Cantidad")]
 		public int CantidadDePedido { get; set; }
 
 		/// <summary>
 		/// Precio del producto solicitado por unidad de medida
 		/// </summary>
+		[DisplayName("Precio por Unidad")]
 		[Column(TypeName = "decimal(18,4)")]
 		public decimal PrecioPorUnidadDeMedida { get; set; }
 
@@ -37,28 +43,38 @@ namespace Proyecto2_MVC_AaronVillalobosArguedas.Models
 		/// <summary>
 		/// Fecha de entrega del pedido.
 		/// </summary>
+		[DisplayName("Fecha de Entrega")]
 		public DateTime FechaEntrega { get; set; }
 
 
 		/// <summary>
 		/// Persona que realiza la entrega del pedido.
 		/// </summary>
+		[DisplayName("Entrega")]
 		public string PersonaQueEntrega { get; set; }
 		
 		/// <summary>
 		/// Persona que recibe el pedido.
 		/// </summary>
+		[DisplayName("Recibe")]
 		public string PersonaQueRecibe { get; set; }
 
 		/// <summary>
 		/// Nombre de la empresa que recibe el pedido.
 		/// </summary>
+		[DisplayName("Empresa")]
 		public string EmpresaQueRecibe { get; set; }
 
 		/// <summary>
 		/// Numero de factura del pedido.
 		/// </summary>
+		[DisplayName("No. de Factura")]
 		public int NumeroFactura { get; set; }
+
+		/// <summary>
+		/// Determina si el pedido fue entregado al inventario.
+		/// </summary>
+		public bool Entregado { get; set; } = false;
 
 		public Pedido()
 		{

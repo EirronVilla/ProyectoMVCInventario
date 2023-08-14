@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Proyecto2_MVC_AaronVillalobosArguedas.Models
 {
@@ -9,40 +10,51 @@ namespace Proyecto2_MVC_AaronVillalobosArguedas.Models
 		/// </summary>
 		[Key]
 		[StringLength(4)]
+		[DisplayName("Código del Producto")]
 		public string CodigoProducto { get; set; }
 
 		/// <summary>
 		/// Nombre del producto.
 		/// </summary>
 		[Required]
-		public string NombreProducto { get; set; }
+        [DisplayName("Nombre del Producto")]
+        public string NombreProducto { get; set; }
 
 		/// <summary>
 		/// Unidad de Medida (g, l, m, u)
 		/// </summary>
 		[Required]
-		public char UnidadDeMedida { get; set; }
+        [DisplayName("Unidad de Medida")]
+        public char UnidadDeMedida { get; set; }
 
 		/// <summary>
 		/// Cantidad minima permitida en inventario.
 		/// </summary>
-		public int CantidadMinima { get; set; }
+		[DisplayName("Cantidad Mínima")]
+        public int CantidadMinima { get; set; }
 
 		/// <summary>
 		/// Cantidad maxima permitida en inventario.
 		/// </summary>
-		public int CantidadMaxima { get; set; }
+		[DisplayName("Cantidad Máxima")]
+        public int CantidadMaxima { get; set; }
 
 		/// <summary>
 		/// Cantidad actual en el inventario.
 		/// </summary>
-		public int CantidadActual { get; set; }
+		[DisplayName("Cantidad Actual")]
+
+        public int CantidadActual { get; set; }
 
 		/// <summary>
 		/// Referencia a los pedidos donde se encuentra el producto.
 		/// </summary>
-		public ICollection<Pedido> Pedidos { get; } = new List<Pedido>();
 
+        public ICollection<Pedido> Pedidos { get; } = new List<Pedido>();
+
+		/// <summary>
+		/// Referencia a los retiros donde se encuentra el producto.
+		/// </summary>
 		public ICollection<Retiro> Retiros { get; } = new List<Retiro>();
 
 		/// <summary>

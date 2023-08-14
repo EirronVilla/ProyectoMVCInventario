@@ -1,0 +1,82 @@
+﻿@model Proyecto2_MVC_AaronVillalobosArguedas.Models.Pedido
+
+<h4>Pedido</h4>
+<hr />
+<div class="">
+	<div class="">
+		<form asp-action="Create">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<label asp-for="ProductoId" class="control-label"></label>
+						<select asp-for="ProductoId" class="form-control" asp-items="ViewBag.ProductoId"></select>
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group">
+						<label asp-for="CantidadDePedido" class="control-label"></label>
+						<input asp-for="CantidadDePedido" class="form-control" />
+						<span asp-validation-for="CantidadDePedido" class="text-danger"></span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<label asp-for="PrecioPorUnidadDeMedida" class="control-label"></label>
+						<input asp-for="PrecioPorUnidadDeMedida" class="form-control" />
+						<span asp-validation-for="PrecioPorUnidadDeMedida" class="text-danger"></span>
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group">
+						<label asp-for="FechaEntrega" class="control-label"></label>
+						<input asp-for="FechaEntrega" class="form-control" />
+						<span asp-validation-for="FechaEntrega" class="text-danger"></span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<label asp-for="PersonaQueEntrega" class="control-label"></label>
+						<input asp-for="PersonaQueEntrega" class="form-control" />
+						<span asp-validation-for="PersonaQueEntrega" class="text-danger"></span>
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group">
+						<label asp-for="PersonaQueRecibe" class="control-label"></label>
+						<input asp-for="PersonaQueRecibe" class="form-control" />
+						<span asp-validation-for="PersonaQueRecibe" class="text-danger"></span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<label asp-for="EmpresaQueRecibe" class="control-label"></label>
+						<input asp-for="EmpresaQueRecibe" class="form-control" />
+						<span asp-validation-for="EmpresaQueRecibe" class="text-danger"></span>
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group">
+						<label asp-for="NumeroFactura" class="control-label"></label>
+						<input asp-for="NumeroFactura" class="form-control" />
+						<span asp-validation-for="NumeroFactura" class="text-danger"></span>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Crear Pedido" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
+</div>
+
+<div>
+	<a asp-action="Index">Volver a la Lista</a>
+</div>
+

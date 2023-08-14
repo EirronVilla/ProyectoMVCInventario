@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Proyecto2_MVC_AaronVillalobosArguedas.Models.Retiro>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Producto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaEntrega)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadARetirar)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producto.CodigoProducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaEntrega)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadARetirar)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Ver Detalle</a> |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

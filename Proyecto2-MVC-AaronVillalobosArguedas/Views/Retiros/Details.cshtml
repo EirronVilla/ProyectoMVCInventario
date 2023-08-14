@@ -1,0 +1,29 @@
+﻿@model Proyecto2_MVC_AaronVillalobosArguedas.Models.Retiro
+
+<div>
+    <h4>Retiro</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Producto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Producto.CodigoProducto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaEntrega)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaEntrega)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CantidadARetirar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CantidadARetirar)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Volver a la lista</a>
+</div>

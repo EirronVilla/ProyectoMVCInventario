@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Proyecto2_MVC_AaronVillalobosArguedas.Models.Producto>
+
+<p>
+    <a asp-action="Create">Agregar Producto</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreProducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnidadDeMedida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadMinima)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadMaxima)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadActual)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreProducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnidadDeMedida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadMinima)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadMaxima)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadActual)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CodigoProducto">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.CodigoProducto">Ver Detalle</a> |
+                <a asp-action="Delete" asp-route-id="@item.CodigoProducto">Borrar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

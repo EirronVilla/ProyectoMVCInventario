@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Proyecto2_MVC_AaronVillalobosArguedas.Models.Pedido>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Producto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadDePedido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecioPorUnidadDeMedida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaEntrega)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonaQueEntrega)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonaQueRecibe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpresaQueRecibe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroFactura)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producto.CodigoProducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadDePedido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioPorUnidadDeMedida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaEntrega)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonaQueEntrega)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonaQueRecibe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpresaQueRecibe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroFactura)
+            </td>
+            <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                    @if (!item.Entregado)
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> @("|")
+                        <a asp-action="ConfirmRequest" asp-route-id="@item.Id">Confirmar</a>
+                    }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
