@@ -54,7 +54,7 @@
 											<div class="checkbox">
 												<label asp-for="Input.RememberMe" class="ml-4 mt-2 form-label">
 													<input class="form-check-input" asp-for="Input.RememberMe" />
-													@Html.DisplayNameFor(m => m.Input.RememberMe)
+													Recordar
 												</label>
 											</div>
 										</div>
@@ -62,11 +62,11 @@
 											<button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
 										</div>
 										<div class="mt-3">
-											<a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+											<a id="forgot-password" asp-page="./ForgotPassword">Olvidé mi contraseña.</a>
 											<br/>
-											<a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+											<a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Registrar como un nuevo usuario.</a>
 											<br/>
-											<a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
+											<a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Reenviar notificación de Email</a>
 										</div>
 									</form>
 								</div>

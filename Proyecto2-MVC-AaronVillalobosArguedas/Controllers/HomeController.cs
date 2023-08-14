@@ -15,7 +15,15 @@ namespace Proyecto2_MVC_AaronVillalobosArguedas.Controllers
 
 		public IActionResult Index()
 		{
-			return View();
+			bool userIsAuthenticated = User.Identity != null && User.Identity.IsAuthenticated;
+			if (userIsAuthenticated)
+			{
+				return View();
+			}
+			else
+			{
+				return Redirect("/Identity/Account/Login");
+			}
 		}
 
 		public IActionResult Privacy()
